@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby-Spel.nl — Leuk & leerzaam spelen met je baby of peuter</title>
+  <meta name="description" content="Gratis spelletjes, activiteiten en tips voor ouders van baby's en peuters. Per leeftijd gesorteerd, direct toepasbaar." />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink-light: #FBEAF0;
+      --pink-mid: #F4C0D1;
+      --pink: #D4537E;
+      --pink-dark: #993556;
+      --pink-deep: #72243E;
+      --mint-light: #E1F5EE;
+      --mint-mid: #9FE1CB;
+      --mint: #1D9E75;
+      --lila-light: #EEEDFE;
+      --lila-mid: #AFA9EC;
+      --lila: #7F77DD;
+      --lila-dark: #3C3489;
+      --green-light: #EAF3DE;
+      --green: #639922;
+      --green-dark: #27500A;
+      --amber-light: #FAEEDA;
+      --amber: #BA7517;
+      --text: #2C2220;
+      --text-muted: #7A5060;
+      --bg: #FFFBFD;
+      --white: #FFFFFF;
+      --border: #F4C0D1;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--pink-dark);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--mint); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--pink-dark); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #FDF0F5 0%, #F0FAF6 50%, #F0EEFE 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--mint-light);
+      color: var(--mint);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      color: var(--pink-deep);
+      line-height: 1.25;
+      max-width: 600px;
+      margin: 0 auto 1.25rem;
+      font-weight: 400;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: white;
+      border: none;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--pink-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--pink-dark);
+      border: 1.5px solid var(--pink-mid);
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--pink-light); }
+
+    /* STATS */
+    .stats {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--pink-dark); }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* SECTION */
+    .section { padding: 3.5rem 2rem; }
+    .section-alt { background: #F9FBF6; }
+    .section-lila { background: #F4F3FE; }
+
+    .section-header { text-align: center; margin-bottom: 2rem; }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .eyebrow-pink { color: var(--pink); }
+    .eyebrow-mint { color: var(--mint); }
+    .eyebrow-lila { color: var(--lila); }
+    .eyebrow-amber { color: var(--amber); }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub { font-size: 15px; color: var(--text-muted); }
+
+    /* AGE CARDS */
+    .age-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .age-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .age-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+
+    .age-card.pink::before { background: var(--pink); }
+    .age-card.mint::before { background: var(--mint); }
+    .age-card.lila::before { background: var(--lila); }
+    .age-card.amber::before { background: var(--amber); }
+
+    .age-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .badge-pink { background: var(--pink-light); color: var(--pink-dark); }
+    .badge-mint { background: var(--mint-light); color: var(--mint); }
+    .badge-lila { background: var(--lila-light); color: var(--lila-dark); }
+    .badge-amber { background: var(--amber-light); color: var(--amber); }
+
+    .age-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+    .age-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+
+    .card-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--pink);
+      text-decoration: none;
+    }
+
+    .card-link:hover { text-decoration: underline; }
+
+    /* ARTICLES */
+    .articles-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .article-item {
+      background: var(--white);
+      border: 1px solid var(--mint-light);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .article-item:hover {
+      border-color: var(--mint-mid);
+      box-shadow: 0 2px 12px rgba(29,158,117,0.08);
+    }
+
+    .article-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-mint { background: var(--mint); }
+    .dot-pink { background: var(--pink); }
+    .dot-lila { background: var(--lila); }
+
+    .article-meta { flex: 1; }
+    .article-meta h4 { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    .tag-mint { background: var(--mint-light); color: var(--mint); }
+    .tag-pink { background: var(--pink-light); color: var(--pink-dark); }
+    .tag-lila { background: var(--lila-light); color: var(--lila-dark); }
+    .tag-amber { background: var(--amber-light); color: var(--amber); }
+
+    .article-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+    /* PRODUCTS */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--green-light);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .product-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--green-light);
+      border-radius: var(--radius-sm);
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .product-card h4 { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .product-card .leeftijd { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+    .product-card .prijs { font-size: 17px; font-weight: 600; color: var(--green-dark); margin-bottom: 12px; }
+
+    .btn-bol {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-bol:hover { background: var(--green-dark); }
+
+    .affiliate-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--pink-deep);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter p { color: var(--pink-mid); font-size: 15px; margin-bottom: 1.5rem; }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter-form input:focus { background: rgba(255,255,255,0.25); }
+
+    .btn-newsletter {
+      background: white;
+      color: var(--pink-deep);
+      border: none;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--pink-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span { color: var(--mint); }
+
+    footer p { font-size: 13px; color: var(--text-muted); }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--pink); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .section { padding: 2.5rem 1.25rem; }
+      .stats { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATIE -->
+<nav>
+  <a href="#" class="logo">baby<span>spel</span>.nl</a>
+  <ul class="nav-links">
+    <li><a href="#leeftijden">Per leeftijd</a></li>
+    <li><a href="#artikelen">Tips & artikelen</a></li>
+    <li><a href="#producten">Producten</a></li>
+    <li><a href="#nieuwsbrief">Nieuwsbrief</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Gratis voor alle ouders</div>
+  <h1>Leuk & leerzaam spelen met je baby of peuter</h1>
+  <p>Spelletjes, activiteiten en eerlijke producttips — per leeftijd gesorteerd, direct toepasbaar.</p>
+  <div class="hero-btns">
+    <a href="#leeftijden" class="btn-primary">Vind spelletjes voor jouw kind</a>
+    <a href="#artikelen" class="btn-secondary">Lees gratis tips</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">gratis spelletjes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">leeftijdscategorieën</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">gratis toegang</div>
+  </div>
+</div>
+
+<!-- LEEFTIJDEN -->
+<section class="section" id="leeftijden">
+  <div class="section-header">
+    <div class="section-eyebrow eyebrow-pink">Spelletjes per leeftijd</div>
+    <h2 class="section-title">Wat past bij jouw kind?</h2>
+    <p class="section-sub">Elke leeftijdsfase vraagt om andere prikkels en activiteiten.</p>
+  </div>
+  <div class="age-grid">
+    <div class="age-card pink">
+      <div class="age-badge badge-pink">0 – 6 maanden</div>
+      <h3>Zintuiglijk ontdekken</h3>
+      <p>Zachte geluiden, kleurrijke objecten en rustige aanraking stimuleren de vroegste ontwikkeling.</p>
+      <a href="#" class="card-link">Bekijk spelletjes →</a>
+    </div>
+    <div class="age-card mint">
+      <div class="age-badge badge-mint">6 – 12 maanden</div>
+      <h3>Grijpen & pakken</h3>
+      <p>Blokken, rammelaars en bekertjes stapelen zijn perfect voor de grove en fijne motoriek.</p>
+      <a href="#" class="card-link">Bekijk spelletjes →</a>
+    </div>
+    <div class="age-card lila">
+      <div class="age-badge badge-lila">1 – 2 jaar</div>
+      <h3>Bewegen & ontdekken</h3>
+      <p>Duwspeelgoed, balletjes gooien en eenvoudige puzzels stimuleren grove motoriek en ruimtelijk inzicht.</p>
+      <a href="#" class="card-link">Bekijk spelletjes →</a>
+    </div>
+    <div class="age-card amber">
+      <div class="age-badge badge-amber">2 – 3 jaar</div>
+      <h3>Creatief spelen</h3>
+      <p>Tekenen, kleien en rollenspel bevorderen creativiteit, verbeelding en taalontwikkeling.</p>
+      <a href="#" class="card-link">Bekijk spelletjes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIKELEN -->
+<section class="section section-alt" id="artikelen">
+  <div class="section-header">
+    <div class="section-eyebrow eyebrow-mint">Tips & artikelen</div>
+    <h2 class="section-title">Populaire artikelen</h2>
+    <p class="section-sub">Praktische tips die je vandaag nog kunt toepassen.</p>
+  </div>
+  <div class="articles-list">
+    <a href="#" class="article-item">
+      <div class="article-dot dot-mint"></div>
+      <div class="article-meta">
+        <h4>10 spelletjes voor baby's van 6 maanden</h4>
+        <div class="tags">
+          <span class="tag tag-mint">gratis</span>
+          <span class="tag tag-pink">0–1 jaar</span>
+          <span class="tag tag-lila">5 min lezen</span>
+        </div>
+      </div>
+      <span class="article-arrow">→</span>
+    </a>
+    <a href="#" class="article-item">
+      <div class="article-dot dot-pink"></div>
+      <div class="article-meta">
+        <h4>Beste educatief speelgoed voor peuters in 2025</h4>
+        <div class="tags">
+          <span class="tag tag-amber">producten</span>
+          <span class="tag tag-pink">1–3 jaar</span>
+          <span class="tag tag-lila">8 min lezen</span>
+        </div>
+      </div>
+      <span class="article-arrow">→</span>
+    </a>
+    <a href="#" class="article-item">
+      <div class="article-dot dot-mint"></div>
+      <div class="article-meta">
+        <h4>Buiten spelen met een baby — 7 leuke ideeën</h4>
+        <div class="tags">
+          <span class="tag tag-mint">gratis</span>
+          <span class="tag tag-amber">zomer</span>
+          <span class="tag tag-lila">4 min lezen</span>
+        </div>
+      </div>
+      <span class="article-arrow">→</span>
+    </a>
+    <a href="#" class="article-item">
+      <div class="article-dot dot-lila"></div>
+      <div class="article-meta">
+        <h4>Printbare activiteitenkaarten voor thuis — gratis download</h4>
+        <div class="tags">
+          <span class="tag tag-lila">digitaal</span>
+          <span class="tag tag-mint">gratis</span>
+          <span class="tag tag-pink">direct download</span>
+        </div>
+      </div>
+      <span class="article-arrow">→</span>
+    </a>
+    <a href="#" class="article-item">
+      <div class="article-dot dot-pink"></div>
+      <div class="article-meta">
+        <h4>Hoeveel speeltijd heeft mijn baby per dag nodig?</h4>
+        <div class="tags">
+          <span class="tag tag-mint">gratis</span>
+          <span class="tag tag-pink">0–1 jaar</span>
+          <span class="tag tag-lila">6 min lezen</span>
+        </div>
+      </div>
+      <span class="article-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTEN -->
+<section class="section" id="producten">
+  <div class="section-header">
+    <div class="section-eyebrow eyebrow-amber">Aanbevolen producten</div>
+    <h2 class="section-title">Eerlijk geselecteerd speelgoed</h2>
+    <p class="section-sub">Alleen producten die wij zelf zouden kopen — via bol.com.</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-icon">🧱</div>
+      <h4>Houten blokkenset</h4>
+      <div class="leeftijd">6 maanden – 3 jaar</div>
+      <div class="prijs">€24,99</div>
+      <a href="#" class="btn-bol">Bekijk op bol.com</a>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🧩</div>
+      <h4>Peuter puzzelset</h4>
+      <div class="leeftijd">1 – 3 jaar</div>
+      <div class="prijs">€18,95</div>
+      <a href="#" class="btn-bol">Bekijk op bol.com</a>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🎵</div>
+      <h4>Muzikaal speelgoed</h4>
+      <div class="leeftijd">6 maanden – 2 jaar</div>
+      <div class="prijs">€32,50</div>
+      <a href="#" class="btn-bol">Bekijk op bol.com</a>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🎨</div>
+      <h4>Klei & vingerverf set</h4>
+      <div class="leeftijd">2 – 4 jaar</div>
+      <div class="prijs">€14,99</div>
+      <a href="#" class="btn-bol">Bekijk op bol.com</a>
+    </div>
+  </div>
+  <p class="affiliate-note">* Als je via onze links koopt, ontvangen wij een kleine commissie — zonder extra kosten voor jou.</p>
+</section>
+
+<!-- NIEUWSBRIEF -->
+<section class="newsletter" id="nieuwsbrief">
+  <h2>Elke week nieuwe spelletjes in je inbox</h2>
+  <p>Gratis tips, seizoensactiviteiten en eerlijke producttips — geen spam.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="jouw@emailadres.nl" />
+    <button class="btn-newsletter">Aanmelden</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">baby<span>spel</span>.nl</div>
+  <div class="footer-links">
+    <a href="#">Over ons</a>
+    <a href="#">Privacy</a>
+    <a href="#">Affiliate disclaimer</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>© 2025 baby-spel.nl · Gratis spelletjes & tips voor ouders van baby's en peuters</p>
+</footer>
+
+</body>
+</html>
