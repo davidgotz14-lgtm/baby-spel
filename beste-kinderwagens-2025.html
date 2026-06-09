@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beste Kinderwagens 2025 — Vergelijking & Tips — baby-spel.nl</title>
+  <meta name="description" content="Welke kinderwagen kopen in 2025? Vergelijking van de beste kinderwagens per budget en situatie. Eerlijke tips voor nieuwe ouders." />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --pink-light: #FBEAF0; --pink-mid: #F4C0D1; --pink: #D4537E; --pink-dark: #993556; --pink-deep: #72243E; --mint-light: #E1F5EE; --mint: #1D9E75; --lila-light: #EEEDFE; --lila: #7F77DD; --lila-dark: #3C3489; --green-light: #EAF3DE; --green: #639922; --green-dark: #27500A; --amber-light: #FAEEDA; --amber: #BA7517; --text: #2C2220; --text-muted: #7A5060; --bg: #FFFBFD; --white: #FFFFFF; --border: #F4C0D1; --radius: 12px; --radius-sm: 8px; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--pink-dark); text-decoration: none; }
+    .logo span { color: var(--mint); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; }
+    .article-hero { background: linear-gradient(160deg, #EEEDFE 0%, #FDF0F5 100%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--pink); text-decoration: none; }
+    .article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 4vw, 38px); color: var(--pink-deep); line-height: 1.3; max-width: 680px; margin: 0 auto 1rem; font-weight: 400; }
+    .article-meta { font-size: 13px; color: var(--text-muted); margin-top: 1rem; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem; }
+    .intro { font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--lila-light); border-radius: var(--radius); border-left: 4px solid var(--lila); }
+    .wagen-item { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .wagen-item:last-of-type { border-bottom: none; }
+    .wagen-item h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 0.75rem; }
+    .wagen-item p { margin-bottom: 1rem; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin-bottom: 0.75rem; margin-right: 6px; }
+    .badge-budget { background: var(--green-light); color: var(--green-dark); }
+    .badge-mid { background: var(--amber-light); color: var(--amber); }
+    .badge-premium { background: var(--lila-light); color: var(--lila-dark); }
+    .badge-best { background: var(--pink-light); color: var(--pink-dark); }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1rem 0; }
+    .pros { background: var(--mint-light); border-radius: var(--radius-sm); padding: 1rem; }
+    .cons { background: var(--pink-light); border-radius: var(--radius-sm); padding: 1rem; }
+    .pros h4 { font-size: 13px; font-weight: 600; color: var(--mint); margin-bottom: 0.5rem; }
+    .cons h4 { font-size: 13px; font-weight: 600; color: var(--pink-dark); margin-bottom: 0.5rem; }
+    .pros ul, .cons ul { padding-left: 1rem; font-size: 13px; }
+    .pros li { color: var(--mint); margin-bottom: 4px; }
+    .cons li { color: var(--pink-dark); margin-bottom: 4px; }
+    .product-card { background: var(--white); border: 1px solid var(--green-light); border-radius: var(--radius); padding: 1.25rem; display: flex; align-items: center; gap: 1rem; margin-top: 1rem; }
+    .product-icon { width: 56px; height: 56px; background: var(--green-light); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
+    .product-info { flex: 1; }
+    .product-info h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .product-info .prijs { font-size: 15px; font-weight: 600; color: var(--green-dark); }
+    .product-info .leeftijd { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+    .btn-bol { background: var(--green); color: white; border: none; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; white-space: nowrap; }
+    .tip-box { background: var(--amber-light); border-radius: var(--radius-sm); padding: 1rem 1.25rem; font-size: 14px; color: var(--amber); margin: 1.5rem 0; }
+    .affiliate-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .gerelateerd { background: var(--pink-light); border-radius: var(--radius); padding: 1.5rem; margin-top: 2rem; }
+    .gerelateerd h3 { font-size: 16px; font-weight: 600; color: var(--pink-deep); margin-bottom: 1rem; }
+    .gerelateerd a { display: block; color: var(--pink); text-decoration: none; font-size: 14px; margin-bottom: 6px; }
+    footer { background: var(--white); border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+    .footer-logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--pink-dark); margin-bottom: 0.5rem; }
+    .footer-logo span { color: var(--mint); }
+    footer p { font-size: 13px; color: var(--text-muted); }
+    @media (max-width: 600px) { nav { padding: 0 1rem; } .nav-links { display: none; } .article-body { padding: 1.5rem 1.25rem; } .product-card { flex-direction: column; align-items: flex-start; } .pros-cons { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav><a href="index.html" class="logo">baby<span>spel</span>.nl</a><ul class="nav-links"><li><a href="index.html#leeftijden">Per leeftijd</a></li><li><a href="index.html#artikelen">Tips & artikelen</a></li><li><a href="index.html#producten">Producten</a></li></ul></nav>
+<div class="article-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="index.html#artikelen">Tips & artikelen</a> › Beste kinderwagens 2025</div>
+  <h1>Beste Kinderwagens 2025 — Vergelijking & Kooptips</h1>
+  <div class="article-meta">Leestijd: 8 minuten · Producten · Zwangerschap & pasgeboren</div>
+</div>
+<div class="article-body">
+  <p class="intro">Een kinderwagen kopen is een grote beslissing — je gebruikt hem dagelijks voor 2–3 jaar. Er zijn honderden opties op de markt, van budgetvriendelijk tot premium. In dit artikel helpen we je de juiste keuze te maken voor jouw situatie.</p>
+
+  <div class="tip-box"><strong>Waar moet je op letten?</strong> Denk aan: gewicht van de wagen, hoe makkelijk hij inklapt, wieltype (voor verharde wegen of terrein), of er een reiswiegje bij past, en je budget.</div>
+
+  <div class="wagen-item">
+    <span class="badge badge-budget">Budget</span>
+    <h2>Beste keuze onder €300</h2>
+    <p>Voor ouders die niet te veel willen uitgeven maar toch een betrouwbare wagen willen. Merken als Hauck en Cosatto bieden goede kwaliteit voor een lagere prijs. Let op het gewicht — goedkopere wagens zijn vaak wat zwaarder.</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>Voordelen</h4><ul><li>Betaalbaar</li><li>Voldoende voor dagelijks gebruik</li><li>Breed verkrijgbaar</li></ul></div>
+      <div class="cons"><h4>Nadelen</h4><ul><li>Vaak zwaarder</li><li>Minder accessoires</li><li>Kortere levensduur</li></ul></div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">👶</div>
+      <div class="product-info"><h4>Kinderwagen budget instapmodel</h4><div class="leeftijd">Vanaf geboorte</div><div class="prijs">Vanaf €199</div></div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=kinderwagen+baby+budget&partner_id=1525500" class="btn-bol" target="_blank" rel="nofollow">Bekijk op bol.com</a>
+    </div>
+  </div>
+
+  <div class="wagen-item">
+    <span class="badge badge-mid">Middensegment</span><span class="badge badge-best">Beste keuze</span>
+    <h2>Beste keuze €300 – €700</h2>
+    <p>Dit is het segment waar je de meeste waar voor je geld krijgt. Merken als Joie, Bugaboo Ant en Nuna bieden lichte, compacte wagens met goede wielophanging. Ideaal voor ouders die veel in de stad zijn.</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>Voordelen</h4><ul><li>Licht gewicht</li><li>Makkelijk inklappen</li><li>Goede wielen</li></ul></div>
+      <div class="cons"><h4>Nadelen</h4><ul><li>Niet goedkoop</li><li>Soms beperkte accessoires</li></ul></div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🏙️</div>
+      <div class="product-info"><h4>Compacte stadswagen middensegment</h4><div class="leeftijd">Vanaf geboorte</div><div class="prijs">Vanaf €349</div></div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=kinderwagen+compact+licht+stad&partner_id=1525500" class="btn-bol" target="_blank" rel="nofollow">Bekijk op bol.com</a>
+    </div>
+  </div>
+
+  <div class="wagen-item">
+    <span class="badge badge-premium">Premium</span>
+    <h2>Beste keuze boven €700</h2>
+    <p>Bugaboo, Stokke en UPPAbaby zijn de toonaangevende merken in het premiumsegment. Ze zijn licht, stijlvol, duurzaam en hebben uitstekende wielophanging. Ideaal als je veel buiten bent of op oneven ondergrond rijdt.</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>Voordelen</h4><ul><li>Topkwaliteit</li><li>Lange levensduur</li><li>Veel accessoires</li></ul></div>
+      <div class="cons"><h4>Nadelen</h4><ul><li>Hoge prijs</li><li>Soms overkill voor stadgebruik</li></ul></div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">⭐</div>
+      <div class="product-info"><h4>Premium kinderwagen Bugaboo / Stokke</h4><div class="leeftijd">Vanaf geboorte</div><div class="prijs">Vanaf €799</div></div>
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=bugaboo+kinderwagen&partner_id=1525500" class="btn-bol" target="_blank" rel="nofollow">Bekijk op bol.com</a>
+    </div>
+  </div>
+
+  <div class="gerelateerd">
+    <h3>Meer lezen?</h3>
+    <a href="spelletjes-baby-6-maanden.html">10 spelletjes voor baby's van 6 maanden →</a>
+    <a href="tandjes-krijgen-baby.html">Tandjes krijgen baby — tips & speelgoed →</a>
+    <a href="cadeau-baby-1-jaar.html">Speelgoed cadeau ideeën baby 1 jaar →</a>
+  </div>
+  <p class="affiliate-note">* De productlinks op deze pagina zijn affiliate links. Als je via onze links iets koopt op bol.com, ontvangen wij een kleine commissie — zonder extra kosten voor jou.</p>
+</div>
+<footer><div class="footer-logo">baby<span>spel</span>.nl</div><p>© 2025 baby-spel.nl · Gratis spelletjes & tips voor ouders van baby's en peuters</p></footer>
+</body>
+</html>
